@@ -11,11 +11,15 @@ void sentreverse(char* charptr)
         charptr++;
     }
     top = charptr;
-    while(charptr >= rear-1)
+    while(charptr >= rear)
     {
-        while(*charptr != '_' && charptr != rear-1)
+        while(*charptr != '_' && charptr != rear)
         {
             charptr--;
+        }
+        if(charptr == rear)
+        {
+            cout << *charptr;
         }
         top = charptr;
         charptr++;
@@ -24,11 +28,11 @@ void sentreverse(char* charptr)
             cout << *charptr;
             charptr++;
         }
-        charptr = top;
-        if(charptr >= rear-1)
+        if(*top == '_')
         {
-            cout << *charptr;
+            cout << *top;
         }
+        charptr = top;
         charptr--;
     }
 }
